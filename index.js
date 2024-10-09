@@ -1,6 +1,7 @@
 console.log("file is running....");
 
 document.getElementById('getLocationBtn').addEventListener('click', () => {
+    document.getElementById("click-state").textContent="Button clicked"
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, handleError, {
             enableHighAccuracy: true, // Fetches a more accurate location
@@ -13,7 +14,7 @@ document.getElementById('getLocationBtn').addEventListener('click', () => {
 });
 
 function showPosition(position) {
-    location.reload(true);
+    //location.reload(true);
     document.getElementById("lat-el").textContent='Latitude: ' + position.coords.latitude
     //console.log();
     document.getElementById("long-el").textContent='Longitude: ' + position.coords.longitude
